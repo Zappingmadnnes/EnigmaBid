@@ -1,0 +1,65 @@
+.ProfilePopup {
+	background-image: linear-gradient(
+		to bottom right,
+		rgba(50, 50, 50, 0.4),
+		rgba(50, 50, 50, 0.2)
+	);
+	backdrop-filter: "blur(10px)";
+	padding: 16px;
+	color: #fff;
+	width: 200px;
+	height: 400px;
+	border-radius: 16px;
+	-webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+
+@keyframes anvil {
+	0% {
+		transform: scale(1) translateY(0px);
+		opacity: 0;
+		box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+	}
+	1% {
+		transform: scale(0.96) translateY(10px);
+		opacity: 0;
+		box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+	}
+	100% {
+		transform: scale(1) translateY(0px);
+		opacity: 1;
+		box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+	}
+}
+.SpecialButton {
+	background-image: linear-gradient(
+		to right,
+		#00965f 0%,
+		#00bc77 51%,
+		#00965f 100%
+	);
+	margin: 10px;
+	padding: 8px 16px;
+	text-align: center;
+	transition: 0.5s;
+	background-size: 200%;
+	color: white;
+	border-radius: 20px;
+	border: none;
+	display: flex;
+	box-shadow: 0 0 20px #000;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: medium;
+	font-weight: bold;
+}
+.SpecialButton:hover {
+	background-position: right center; /* change the direction of the change here */
+	color: white;
+	transform: scale(1.1);
+}
+
+.SpecialButton:active {
+	transform: scale(0.8);
+}
