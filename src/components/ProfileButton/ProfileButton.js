@@ -11,7 +11,7 @@ function ProfileButton() {
 
 	// Check for address in local storage
 	useEffect(() => {
-		const storedAddress = localStorage.getItem("userAddress");
+		const storedAddress = localStorage.getItem("EnigmaBidAddress");
 		if (storedAddress) {
 			setAddress(storedAddress);
 			setLoggedIn(true);
@@ -28,7 +28,7 @@ function ProfileButton() {
 				// Retrieve the user's address
 				const accounts = await web3.eth.getAccounts();
 				//Store in address in local storage
-				localStorage.setItem("userAddress", accounts[0]);
+				localStorage.setItem("EnigmaBidAddress", accounts[0]);
 				setAddress(accounts[0]);
 				setLoggedIn(true);
 			} catch (error) {
