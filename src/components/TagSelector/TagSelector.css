@@ -1,0 +1,52 @@
+.Container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+}
+.Tag {
+	display: inline-block;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 4px;
+	color: #fff;
+}
+
+.Tag.selected {
+	background-color: #007bff;
+	color: #fff;
+	border-color: #007bff;
+}
+
+input[type="text"] {
+	outline: none;
+	padding: 5px 10px;
+	border: 2px solid #00965f;
+	border-radius: 8px;
+	background-color: #4e4e4e;
+	width: 90%;
+	color: #fff;
+}
+.TagList {
+	overflow-y: scroll;
+	background-color: #4e4e4e;
+	margin-top: 8px;
+	max-height: 40vh;
+	width: 100%;
+	color: gray;
+	border: 2px solid #00965f;
+	border-radius: 8px;
+	padding: 8px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box; /* Opera/IE 8+ */
+}
+.TagList::-webkit-scrollbar {
+	width: 0.2em;
+}
+.TagList::-webkit-scrollbar-thumb {
+	background-color: #333;
+	border-radius: 20px;
+}

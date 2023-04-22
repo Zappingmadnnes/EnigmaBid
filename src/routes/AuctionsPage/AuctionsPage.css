@@ -1,0 +1,55 @@
+.Background {
+	background-color: hsla(0, 0%, 4%, 1);
+	background-image: radial-gradient(
+			at 100% 100%,
+			hsla(158, 100%, 14%, 1) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 0% 100%,
+			hsla(158, 100%, 14%, 1) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 100% 0%,
+			hsla(158, 100%, 14%, 0.1) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 0% 0%,
+			hsla(158, 100%, 14%, 0.1) 0px,
+			transparent 50%
+		);
+
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+.AuctionPage {
+	width: 80%;
+	height: 80%;
+	margin-top: 64px;
+	backdrop-filter: blur(50px);
+	background-image: linear-gradient(
+		to bottom right,
+		rgba(50, 50, 50, 0.6),
+		rgba(50, 50, 50, 0.4)
+	);
+	display: grid;
+	grid-template-areas:
+		"header header header"
+		"sidebar content content";
+	grid-template-columns: 20% 50% auto;
+	grid-template-rows: 64px auto;
+}
+.AuctionPage__Sidebar {
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+}

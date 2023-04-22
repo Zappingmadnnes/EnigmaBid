@@ -1,10 +1,10 @@
 import React from "react";
 import "./LandingPage.css";
-import BigLogo from "./assets/images/Enigma.png";
+import BigLogo from "../../assets/images/Enigma.png";
 
 import { TypeAnimation } from "react-type-animation";
 
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 function LandingPage() {
 	return (

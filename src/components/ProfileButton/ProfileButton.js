@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ProfileButton.css";
 
-import Web3 from "web3";
-
 import Popup from "reactjs-popup";
 
 function ProfileButton() {
@@ -19,23 +17,20 @@ function ProfileButton() {
 	}, []);
 
 	async function handleConnect() {
-		// Check if MetaMask is installed
-		if (typeof window.ethereum !== "undefined") {
-			// Request access to the user's MetaMask account
+		if (window.ethereum) {
 			try {
-				await window.ethereum.enable();
-				const web3 = new Web3(window.ethereum);
-				// Retrieve the user's address
-				const accounts = await web3.eth.getAccounts();
-				//Store in address in local storage
+				await window.ethereum.request({
+					method: "eth_requestAccounts",
+				});
+				const accounts = await window.ethereum.request({
+					method: "eth_accounts",
+				});
 				localStorage.setItem("EnigmaBidAddress", accounts[0]);
 				setAddress(accounts[0]);
 				setLoggedIn(true);
 			} catch (error) {
 				console.error(error);
 			}
-		} else {
-			console.error("MetaMask is not installed");
 		}
 	}
 
