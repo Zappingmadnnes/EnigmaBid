@@ -22,7 +22,7 @@ function ItemCard() {
 			>
 				<div className="item-card__overlay">
 					<h2 className="item-card__title">
-						Auction item title goes here{" "}
+						Auction item title goes here
 					</h2>
 					<p className="item-card__description">
 						This item is on auction. lorem ipsum smthn smthn smthn

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./Search.css";
+import { BsSearch } from "react-icons/bs";
 function Search() {
 	const inputRef = useRef(null);
 
@@ -8,7 +9,14 @@ function Search() {
 	};
 
 	return (
-		<div>
+		<div style={{ display: "flex", alignItems: "center" }}>
+			<BsSearch
+				style={{
+					color: "#00965f",
+					fontSize: "x-large",
+					marginRight: "12px",
+				}}
+			/>
 			<input
 				className="search"
 				type="search"

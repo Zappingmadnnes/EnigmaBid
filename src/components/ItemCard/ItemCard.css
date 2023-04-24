@@ -23,11 +23,11 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 33.33%;
+	height: 100%;
 	background: linear-gradient(
 		to top,
 		rgba(0, 0, 0, 1),
-		rgba(0, 0, 0, 0.6) 70%,
+		rgba(0, 0, 0, 0.6) 40%,
 		transparent
 	);
 	display: flex;
@@ -43,10 +43,11 @@
 	color: #00965f;
 	font-size: 1.5rem;
 	margin: 0;
+	text-align: left;
 }
 
 .item-card__description {
-	color: #ccc;
+	color: #777;
 	margin: 0;
 	font-size: 1rem;
 	margin-top: 0.5rem;

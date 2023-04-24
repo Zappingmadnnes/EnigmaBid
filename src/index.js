@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import LandingPage from "./routes/LandingPage/LandingPage";
 import AuctionsPage from "./routes/AuctionsPage/AuctionsPage";
+import NotFoundPage from "./routes/NotFoundPage/NotFoundPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
 	{
 		path: "/auctions",
 		element: <AuctionsPage />,
+	},
+	{
+		path: "*",
+		element: <NotFoundPage />,
 	},
 ]);
 

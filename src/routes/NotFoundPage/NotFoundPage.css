@@ -1,0 +1,52 @@
+.Background {
+	background-color: hsla(0, 0%, 4%, 1);
+	background-image: radial-gradient(
+			at 100% 100%,
+			hsla(158, 100%, 14%, 1) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 0% 100%,
+			hsla(158, 100%, 14%, 1) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 100% 0%,
+			hsla(158, 100%, 14%, 0.1) 0px,
+			transparent 50%
+		),
+		radial-gradient(
+			at 0% 0%,
+			hsla(158, 100%, 14%, 0.1) 0px,
+			transparent 50%
+		);
+
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+.Background__h1 {
+	font-family: "Roboto Mono", monospace;
+	color: rgb(0, 150, 95);
+	text-shadow: 0 0 10px rgb(0, 150, 95);
+	text-align: center;
+	font-size: xxx-large;
+}
+.Background__h2 {
+	font-family: "Roboto Mono", monospace;
+	color: rgb(0, 150, 95);
+	text-align: center;
+	font-size: x-large;
+}
+.Link {
+	font-family: "Roboto Mono", monospace;
+	color: rgb(0, 150, 95);
+
+	text-align: center;
+	font-size: x-large;
+	margin-top: 32px;
+}

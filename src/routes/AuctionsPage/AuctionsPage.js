@@ -19,7 +19,7 @@ function AuctionsPage(props) {
 					<TagSelector />
 					<label>Starting bid:</label>
 					<RangeSelector type={"number"} />
-					<label>Time posted:</label>
+					<label>Age:</label>
 					<RangeSelector type={"date"} />
 					<label>Hours remaining:</label>
 					<RangeSelector type={"number"} />
@@ -53,12 +53,13 @@ function AuctionsPage(props) {
 					<ItemCard />
 				</div>
 				<div className="AuctionPage__Header">
-					<div>
+					<div className="Header__Sort">
 						<Search />
+						<div style={{ margin: "0px 16px" }} />
 						<Sort
-							options={["Option 1", "Option 2", "Option 3"]}
-							defaultOption="Option 1"
-							onSelect={(e) => console.log(e)}
+							options={["Starting Bid", "Time Left", "Age "]}
+							defaultOption="Starting Bid"
+							onChange={(e) => console.log(e)}
 						/>
 					</div>
 					<Time />
