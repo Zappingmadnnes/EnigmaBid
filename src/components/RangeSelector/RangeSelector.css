@@ -1,0 +1,30 @@
+.range-selector {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: #00965f;
+	width: 96%;
+}
+input[type="number"] {
+	outline: none;
+	padding: 5px 10px;
+	border: 2px solid #00965f;
+	border-radius: 8px;
+	background-color: #4e4e4e;
+	width: 32%;
+	color: #fff;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+input[type="date"] {
+	outline: none;
+	padding: 5px 10px;
+	border: 2px solid #00965f;
+	border-radius: 8px;
+	background-color: #4e4e4e;
+	width: 100px;
+	color: #fff;
+}

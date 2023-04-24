@@ -89,7 +89,7 @@ function TagSelector(props) {
 	);
 
 	return (
-		<div className="Container">
+		<div className="tag-selector">
 			<input
 				type="text"
 				placeholder="Search tags"
@@ -99,12 +99,12 @@ function TagSelector(props) {
 				ref={inputRef}
 			/>
 			{isFocused && inputValue.length >= 0 && (
-				<div className="TagList" ref={tagListRef}>
+				<div className="tag-list" ref={tagListRef}>
 					{filteredTags.length > 0
 						? filteredTags.map((tag) => (
 								<div
 									key={tag}
-									className={`Tag ${
+									className={`tag ${
 										selectedTags.includes(tag)
 											? "selected"
 											: ""

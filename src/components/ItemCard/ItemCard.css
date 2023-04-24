@@ -1,0 +1,24 @@
+.item-card {
+	height: 300px;
+	width: 300px;
+	border-radius: 8px;
+	background-color: #4e4e4e;
+	display: inline-block;
+	display: flex;
+	flex-direction: column;
+}
+.item-card__banner {
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	background-color: #000;
+	width: 100%;
+	height: 70%;
+}
+.item-card__content {
+	display: flex;
+	flex-direction: column;
+}
+.content__title {
+}
+.content__category {
+}
