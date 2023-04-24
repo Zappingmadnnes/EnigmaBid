@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import "./RangeSelector.css";
 function RangeSelector({ type }) {
-	const [minNumber, setminNumber] = useState(0);
-	const [maxNumber, setMaxNumber] = useState(100);
+	const [minNumber, setminNumber] = useState();
+	const [maxNumber, setMaxNumber] = useState();
 
 	const handleminNumberChange = (event) => {
-		setminNumber(event.target.value);
+		setminNumber(parseInt(event.target.value));
 	};
 
 	const handlemaxNumberChange = (event) => {
-		setMaxNumber(event.target.value);
+		setMaxNumber(parseInt(event.target.value));
 	};
 
-	function handleBlur() {
-		if (minNumber > maxNumber) {
+	function handleBlur(event) {
+		if (
+			event.target.name === "minNumber" &&
+			parseInt(event.target.value) > maxNumber
+		) {
 			setMaxNumber(minNumber);
-		} else if (maxNumber < minNumber) {
+		} else if (
+			event.target.name === "maxNumber" &&
+			parseInt(event.target.value) < minNumber
+		) {
 			setMaxNumber(minNumber);
 		}
 	}

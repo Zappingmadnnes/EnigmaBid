@@ -34,17 +34,19 @@
 	height: 80%;
 	margin-top: 64px;
 	backdrop-filter: blur(50px);
-	background-image: linear-gradient(
+	/* background-image: linear-gradient(
 		to bottom right,
 		rgba(50, 50, 50, 0.6),
 		rgba(50, 50, 50, 0.4)
-	);
+	); */
+	background-color: rgba(25, 25, 25, 0.8);
 	display: grid;
 	grid-template-areas:
-		"header header header"
+		"title header header"
 		"sidebar content content";
 	grid-template-columns: 320px 50% auto;
 	grid-template-rows: 64px auto;
+	border-radius: 16px;
 }
 .AuctionPage__Sidebar {
 	grid-area: sidebar;
@@ -60,10 +62,39 @@ label {
 	font-size: smaller;
 	color: #00965f;
 	align-self: flex-start;
-	margin-top: 8px;
-	margin-bottom: 2px;
+	margin-top: 10px;
+	margin-bottom: 4px;
 }
 .AuctionPage__Content {
 	grid-area: content;
 	padding: 16px;
+	overflow-y: scroll;
+	border-top: 2px solid #00965f;
+}
+.AuctionPage__Content::-webkit-scrollbar {
+	width: 0.4em;
+}
+.AuctionPage__Content::-webkit-scrollbar-thumb {
+	background-color: #333;
+	border-radius: 8px;
+}
+.AuctionPage__Header {
+	grid-area: header;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 32px;
+}
+.AuctionPage__Title {
+	grid-area: title;
+	font-family: "Roboto Mono", monospace;
+	color: rgb(0, 150, 95);
+	text-shadow: 0 0 10px rgb(0, 150, 95);
+	text-align: center;
+	font-size: xx-large;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px 32px;
+	border-right: 2px solid #00965f;
 }

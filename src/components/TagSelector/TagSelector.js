@@ -92,12 +92,26 @@ function TagSelector(props) {
 		<div className="tag-selector">
 			<input
 				type="text"
-				placeholder="Search tags"
+				placeholder={"Search for tags..."}
 				value={inputValue}
 				onChange={handleInputChange}
 				onFocus={() => setIsFocused(true)}
 				ref={inputRef}
 			/>
+			<div className="tag-selected-list">
+				{selectedTags.map((tag) => (
+					<div
+						key={tag}
+						className={`tag ${
+							selectedTags.includes(tag) ? "selected" : ""
+						}`}
+						onClick={() => handleTagSelection(tag)}
+					>
+						{tag}
+					</div>
+				))}
+			</div>
+
 			{isFocused && inputValue.length >= 0 && (
 				<div className="tag-list" ref={tagListRef}>
 					{filteredTags.length > 0

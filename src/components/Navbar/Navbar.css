@@ -9,9 +9,10 @@
 	align-items: center;
 	padding: 4px 24px;
 	backdrop-filter: blur(50px);
-	background-image: linear-gradient(
+	/* background-image: linear-gradient(
 		to bottom right,
 		rgba(50, 50, 50, 0.4),
 		rgba(50, 50, 50, 0.2)
-	);
+	); */
+	background-color: rgba(25, 25, 25, 0.8);
 }

@@ -1,24 +1,53 @@
 .item-card {
-	height: 300px;
 	width: 300px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
 	border-radius: 8px;
-	background-color: #4e4e4e;
 	display: inline-block;
-	display: flex;
-	flex-direction: column;
+	margin: 16px;
 }
-.item-card__banner {
-	border-top-right-radius: 8px;
-	border-top-left-radius: 8px;
-	background-color: #000;
+
+.item-card__image {
 	width: 100%;
-	height: 70%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-.item-card__content {
+
+.item-card__overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 33.33%;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 1),
+		rgba(0, 0, 0, 0.6) 70%,
+		transparent
+	);
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1rem;
+	box-sizing: border-box;
 }
-.content__title {
+
+.item-card__title {
+	font-family: "Roboto Mono", monospace;
+	text-shadow: 0 0 10px rgb(0, 150, 95);
+	color: #00965f;
+	font-size: 1.5rem;
+	margin: 0;
 }
-.content__category {
+
+.item-card__description {
+	color: #ccc;
+	margin: 0;
+	font-size: 1rem;
+	margin-top: 0.5rem;
 }

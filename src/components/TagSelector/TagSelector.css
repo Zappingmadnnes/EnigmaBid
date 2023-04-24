@@ -16,9 +16,13 @@
 }
 
 .tag.selected {
-	background-color: #007bff;
-	color: #fff;
-	border-color: #007bff;
+	background-image: linear-gradient(
+		to right,
+		#00965f 0%,
+		#00bc77 51%,
+		#00965f 100%
+	);
+	border-color: #00965f;
 }
 
 input[type="text"] {
@@ -48,4 +52,7 @@ input[type="text"] {
 .tag-list::-webkit-scrollbar-thumb {
 	background-color: #333;
 	border-radius: 20px;
+}
+.tag-selected-list {
+	margin-top: 8px;
 }

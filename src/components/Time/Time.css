@@ -1,0 +1,7 @@
+.Time {
+	font-family: "Roboto Mono", monospace;
+	color: rgb(0, 150, 95);
+	text-shadow: 0 0 10px rgb(0, 150, 95);
+	text-align: center;
+	font-size: x-large;
+}
