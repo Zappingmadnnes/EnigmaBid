@@ -25,7 +25,7 @@
 	border-color: #00965f;
 }
 
-input[type="text"] {
+.tag-selector-input {
 	outline: none;
 	padding: 5px 10px;
 	border: 2px solid #00965f;

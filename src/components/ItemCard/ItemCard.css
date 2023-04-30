@@ -6,6 +6,11 @@
 	border-radius: 8px;
 	display: inline-block;
 	margin: 16px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.item-card:hover {
+	transform: scale(1.05);
 }
 
 .item-card__image {
@@ -44,6 +49,8 @@
 	font-size: 1.5rem;
 	margin: 0;
 	text-align: left;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 .item-card__description {
@@ -51,4 +58,6 @@
 	margin: 0;
 	font-size: 1rem;
 	margin-top: 0.5rem;
+	word-wrap: break-word;
+	white-space: pre-wrap;
 }

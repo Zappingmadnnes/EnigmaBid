@@ -1,0 +1,24 @@
+.Option {
+	display: flex;
+	align-items: center;
+	font-size: smaller;
+	color: #00965f;
+	margin-top: 10px;
+	margin-left: 8px;
+	font-weight: bold;
+}
+.Option__Checkbox {
+	width: 24px;
+	height: 24px;
+	border: 2px solid #00965f;
+	border-radius: 8px;
+	background-color: #4e4e4e;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	margin: 8px;
+}
+.Option__Checkbox:hover {
+	background-color: #777;
+}

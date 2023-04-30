@@ -16,7 +16,7 @@ function AuctionsPage(props) {
 			<div className="AuctionPage">
 				<div className="AuctionPage__Sidebar">
 					<label>Tags:</label>
-					<TagSelector />
+					<TagSelector placeholder={"Search for tags..."} />
 					<label>Starting bid:</label>
 					<RangeSelector type={"number"} />
 					<label>Age:</label>

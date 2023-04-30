@@ -1,0 +1,52 @@
+.ItemPage {
+	width: 80%;
+	height: 80%;
+	margin-top: 64px;
+	backdrop-filter: blur(50px);
+	/* background-image: linear-gradient(
+		to bottom right,
+		rgba(50, 50, 50, 0.6),
+		rgba(50, 50, 50, 0.4)
+	); */
+	background-color: rgba(25, 25, 25, 0.8);
+	display: grid;
+	grid-template-areas:
+		"corner header header"
+		"sidebar content content";
+	grid-template-columns: 64px 50% auto;
+	grid-template-rows: 64px auto;
+	border-radius: 16px;
+}
+.ItemPage__Header {
+	grid-area: header;
+	font-family: "Roboto Mono", monospace;
+	color: rgb(0, 150, 95);
+	text-shadow: 0 0 10px rgb(0, 150, 95);
+	text-align: center;
+	font-size: xx-large;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 32px;
+	border-bottom: 2px solid #00965f;
+}
+.ItemPage__Corner {
+	grid-area: corner;
+	border-right: 2px solid #00965f;
+	color: rgb(0, 150, 95);
+	text-shadow: 0 0 10px rgb(0, 150, 95);
+	font-size: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 2px solid #00965f;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.ItemPage__Corner:hover {
+	font-size: 45px;
+}
+.ItemPage__SideBar {
+	grid-area: sidebar;
+	border-right: 2px solid #00965f;
+}

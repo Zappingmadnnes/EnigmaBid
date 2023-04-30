@@ -26,7 +26,7 @@ function Navbar(props) {
 				<Link className="LeftSide__Link" to="/auctions">
 					Auctions
 				</Link>
-				<Link className="LeftSide__Link" to="/">
+				<Link className="LeftSide__Link" to="/auctions/create">
 					Create Auction
 				</Link>
 			</div>

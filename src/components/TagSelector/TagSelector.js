@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./TagSelector.css";
 
-function TagSelector(props) {
+function TagSelector({ placeholder }) {
 	const [selectedTags, setSelectedTags] = useState([]);
 	const [inputValue, setInputValue] = useState("");
 	const [isFocused, setIsFocused] = useState(false);
@@ -92,11 +92,12 @@ function TagSelector(props) {
 		<div className="tag-selector">
 			<input
 				type="text"
-				placeholder={"Search for tags..."}
+				placeholder={placeholder}
 				value={inputValue}
 				onChange={handleInputChange}
 				onFocus={() => setIsFocused(true)}
 				ref={inputRef}
+				className="tag-selector-input"
 			/>
 			<div className="tag-selected-list">
 				{selectedTags.map((tag) => (
