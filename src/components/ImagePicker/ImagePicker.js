@@ -41,16 +41,21 @@ function ImagePicker({ onChange, images }) {
 							<div className="UploadImage__Wrapper">
 								{imageList.map((image, index) => (
 									<div key={index} className="ImageItem">
-										<div className="ImageItem__Image">
-											<img
+										<div className="ImageItem__ImageContainer">
+											<div
+												className="ImageItem__Image"
+												style={{
+													backgroundImage: `url(${image["data_url"]})`,
+												}}
+											>
+												{/* <img
+												className="ImageItem__Image"
 												src={image["data_url"]}
 												alt=""
-												width="184"
-												// height="184"
-
-												style={{ position: "absolute" }}
-											/>
+											/> */}
+											</div>
 										</div>
+
 										<div className="ImageItem__BtnWrapper">
 											<button
 												className="ImageItem__Btn"

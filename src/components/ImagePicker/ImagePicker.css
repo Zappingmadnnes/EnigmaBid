@@ -3,9 +3,21 @@
 	border: 2px solid #00965f;
 	border-radius: 8px;
 	background-color: #4e4e4e;
-	max-width: 760px;
-	width: fit-content;
+	width: 100%;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	height: 50vh;
+
+	/* max-height: 200px; */
 }
+.UploadImage__Wrapper::-webkit-scrollbar {
+	width: 0.2em;
+}
+.UploadImage__Wrapper::-webkit-scrollbar-thumb {
+	background-color: #333;
+	border-radius: 20px;
+}
+
 .ImageItem__Btn {
 	outline: none;
 	padding: 5px 10px;
@@ -54,11 +66,25 @@ button:hover {
 	margin: 16px;
 	display: inline-block;
 }
-.ImageItem__Image {
+.ImageItem__ImageContainer {
 	border: 2px solid #00965f;
 	border-radius: 8px;
 	width: 200px;
 	height: 200px;
 	padding: 8px;
 	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+.ImageItem__Image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
