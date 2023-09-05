@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import ImagePicker from "../../components/ImagePicker/ImagePicker";
 import Time from "../../components/Time/Time";
 import OptionPicker from "../../components/OptionPicker/OptionPicker";
+import { storage } from "../../firebase";
 
 function CreatePage(props) {
 	const [details, setDetails] = useState({
@@ -42,6 +43,23 @@ function CreatePage(props) {
 			[name]: value,
 		});
 	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		try {
+			const docRef = await addDoc(collection(db, "auctions"), {
+				title: details.title,
+				description: details.description,
+				imageUrl: details.imageUrl,
+				createdAt: serverTimestamp(),
+			});
+			console.log("Document written with ID: ", docRef.id);
+		} catch (e) {
+			console.error("Error adding document: ", e);
+		}
+	};
+
 	return (
 		<div className="Background">
 			<Navbar />
@@ -65,35 +83,40 @@ function CreatePage(props) {
 					</div>
 				</div>
 				<div className="CreatePage__Fields">
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "flex-start",
-							marginRight: "32px",
-						}}
-					>
-						<div className="CreatePage__InputTitle">Title</div>
-						<Input
-							name={"title"}
-							type={"text"}
-							placeholder={"Item name..."}
-							value={details.title}
-							onChange={handleInputChange}
-						/>
-						<div className="CreatePage__InputTitle">
-							Description
-						</div>
+					<form onSubmit={handleSubmit}>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "flex-start",
+								marginRight: "32px",
+							}}
+						>
+							<div className="CreatePage__InputTitle">Title</div>
+							<Input
+								name={"title"}
+								type={"text"}
+								placeholder={"Item name..."}
+								value={details.title}
+								onChange={handleInputChange}
+							/>
+							<div className="CreatePage__InputTitle">
+								Description
+							</div>
 
-						<textarea
-							name={"description"}
-							placeholder={"Item description..."}
-							value={details.description}
-							onChange={handleInputChange}
-						/>
-						<OptionPicker options={["Digital", "Physical"]} />
-						<SpecialButton text={"Create auction"} />
-					</div>
+							<textarea
+								name={"description"}
+								placeholder={"Item description..."}
+								value={details.description}
+								onChange={handleInputChange}
+							/>
+							<OptionPicker options={["Digital", "Physical"]} />
+							<SpecialButton
+								action={handleSubmit}
+								text={"Create auction"}
+							/>
+						</div>
+					</form>
 				</div>
 				<div className="CreatePage__Images">
 					<ImagePicker onChange={onImageChange} images={images} />

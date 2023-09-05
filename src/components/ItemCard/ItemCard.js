@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemCard.css";
 import { useNavigate } from "react-router-dom";
 
-function ItemCard({ details, image }) {
+function ItemCard({ title, description, image }) {
 	const navigate = useNavigate();
 	const id = 3;
 	// return (
@@ -30,15 +30,15 @@ function ItemCard({ details, image }) {
 				}
 			>
 				<div className="item-card__overlay">
-					{details ? (
+					{title ? (
 						<>
 							<h2 className="item-card__title">
-								{details.title.substr(0, 40)}
+								{title.substr(0, 40)}
 							</h2>
 							<p className="item-card__description">
-								{details.description.length > 200
-									? details.description.substr(0, 200) + "..."
-									: details.description}
+								{description.length > 200
+									? description.substr(0, 200) + "..."
+									: description}
 							</p>
 						</>
 					) : null}

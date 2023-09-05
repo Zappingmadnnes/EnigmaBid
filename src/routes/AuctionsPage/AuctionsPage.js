@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AuctionsPage.css";
+import { db } from "../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 import Navbar from "../../components/Navbar/Navbar";
 import TagSelector from "../../components/TagSelector/TagSelector";
@@ -10,6 +12,17 @@ import Search from "../../components/Search/Search";
 import Sort from "../../components/Sort/Sort";
 
 function AuctionsPage(props) {
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await getDocs(collection(db, "auctions"));
+			setData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<div className="Background">
 			<Navbar />
@@ -25,32 +38,13 @@ function AuctionsPage(props) {
 					<RangeSelector type={"number"} />
 				</div>
 				<div className="AuctionPage__Content">
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
-					<ItemCard />
+					{data.map((item) => (
+						<ItemCard
+							key={item.id}
+							title={item.title}
+							description={item.description}
+						/>
+					))}
 				</div>
 				<div className="AuctionPage__Header">
 					<div className="Header__Sort">
